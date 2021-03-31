@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <canvas id="canvas" height="400" width="400" style="border: 1px solid #cf1313"></canvas>
+    <div>bai 4 ban kinh = 100, toa do x = 10 , y =  10  khong hien thi het hinh tron</div>
+    <script>
+        // bai1
+        function findMax(arr) {
+            if(arr.length <= 0) 
+                return false;
+            let max = arr[0];
+            for(let i = 1; i < arr.length; i ++) {
+                if(max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        // bai 2
+        function tryRemoveFromArray(arr,x) {
+            if(arr.length <= 0) 
+                return false;
+            for(let i = 0; i < arr.length; i ++) {
+                if(arr[i] === x) {
+                    arr.splice(i,1);
+                }
+            }
+            return arr;
+        }
+
+        // bai 3
+
+        function isFibonacci(n) {
+            if(n <= 0) 
+                return false;
+            else if(n <= 2)
+                return true;
+            let arr = [1,1];
+            let i = 1;
+            while(arr[i] <= n ) {
+                arr[i+1] = arr[i] + arr[i-1];
+                if(arr[i+1] == n)
+                    return true;
+                else if(arr[i+1] > n)
+                    return false;  
+                i++;
+            }
+            return false;
+        }
+
+
+        // bai 4 
+
+        const ctx = document.getElementById('canvas').getContext('2d');
+        class Circle {
+            constructor(x, y, radius, color){
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+                ctx.fillstyle = this.color;
+                ctx.fill();
+
+            }
+        }
+        let a = new Circle(10,10,100,"#000000");
+        a.draw();
+
+    </script>
+</body>
+</html>
