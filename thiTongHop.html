@@ -9,7 +9,17 @@
 <body>
     <canvas id="canvas" height="400" width="400" style="border: 1px solid #cf1313"></canvas>
     <div>bai 4 ban kinh = 100, toa do x = 10 , y =  10  khong hien thi het hinh tron</div>
+
+    <div>Bai1: gia tri lon nhat trong mang la <span id="bai1"></span></div>  </br></br>
+    <div>Bai2: mang sau khi bi xoa la : <span id="bai2"> </span></div> <br><br>
+    <div>Bai3: kiem tra so 17 co trong day Fibonacy khong : <span id="bai3"> </span></div> <br><br>
+
+
+
     <script>
+        arr1 = [2,3,5,7,9,11,13,14,15,16,17];
+        arr2 = [2,3,5,7,9,11,13,17];
+
         // bai1
         function findMax(arr) {
             if(arr.length <= 0) 
@@ -22,6 +32,7 @@
             }
             return max;
         }
+        document.getElementById('bai1').innerText = findMax(arr1);
 
         // bai 2
         function tryRemoveFromArray(arr,x) {
@@ -34,6 +45,7 @@
             }
             return arr;
         }
+        document.getElementById('bai2').innerText = tryRemoveFromArray(arr2,5);
 
         // bai 3
 
@@ -54,6 +66,8 @@
             }
             return false;
         }
+
+        document.getElementById('bai3').innerText = isFibonacci(17);
 
 
         // bai 4 
